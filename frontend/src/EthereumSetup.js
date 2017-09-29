@@ -1,10 +1,12 @@
 import Web3 from 'web3';
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
-var greeterABI = [{"constant":true,"inputs":[],"name":"greet","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_greeting","type":"string"}],"name":"greeter","outputs":[],"payable":false,"type":"function"}]
+web3.eth.defaultAccount = web3.eth.accounts[0];
 
-var greeterAddress = '0x9029f945ae211b7e2a914fe27ca10c410a896d18'; 
+var incentiveABI = [{"constant":false,"inputs":[],"name":"receiverCompleted","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"checkTimeElapsed","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"done","type":"bool"}],"name":"verify","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"checkStatus","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_oracle","type":"address"}],"name":"oracleChoose","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"makeDonation","outputs":[],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"oracle","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"bounty","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"checkBounty","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"confirmCompletion","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"receiverInitialize","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"timeGap","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"completionStatus","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"receiver","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"completionTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"inputs":[{"name":"_timeGap","type":"uint256"}],"payable":false,"type":"constructor"},{"payable":false,"type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"donor","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"DonationMade","type":"event"},{"anonymous":false,"inputs":[],"name":"ReceiverCompletion","type":"event"},{"anonymous":false,"inputs":[],"name":"CompletionRejected","type":"event"},{"anonymous":false,"inputs":[],"name":"CompletionVerified","type":"event"}];
 
-const greeterContract = web3.eth.contract(greeterABI).at(greeterAddress);
+var incentiveAddress = '0xe0984485c641e1dc3cf5d05145e26291f9909578';
 
-export{greeterContract};
+const incentiveContract = web3.eth.contract(incentiveABI).at(incentiveAddress);
+
+export{incentiveContract};

@@ -1,35 +1,32 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {greeterContract} from './EthereumSetup';
+import {incentiveContract} from './EthereumSetup';
 
 class App extends Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			greeting: ""
-			blockAddress: "",
+			completionStatus: "",
+			bounty: "",
 		}
 	}
 
 	componentWillMount() {
-		var data = greeterContract.greet()
+		var bountyVal = incentiveContract.checkBounty();
+		var completionVal = incentiveContract.checkStatus();
 		this.setState({
-			greeting: String(data)
-			blockAddress
+			completionStatus: completionVal,
+			bounty: parseInt(bountyVal, 10)
 		})
 	}
 
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
         <p className="App-intro">
-		I would like to say : {this.state.greeting}
+		I would like to say : {this.state.bounty}
         </p>
       </div>
     );
