@@ -1,5 +1,5 @@
 const HDWalletProvider = require('truffle-hdwallet-provider')
-let mnemonic = 'dignity above glance still victory sibling chaos shift despair game poem garden'
+let mnemonic = 'luggage basket tilt chase school clarify aspect void enter cereal chuckle pig' 
 module.exports = {
   networks: {
       //download testrpc and type `testrpc` in your console to start a locally hosted blockchain
