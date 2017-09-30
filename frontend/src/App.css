@@ -1,3 +1,94 @@
+/*Owner stuff */
+.DonorBox {
+position: absolute;
+height: 25%;
+width: 30%;
+left:50%;
+top: 60%;
+border-style: solid;
+border-width: 2px;
+}
+
+.ReceiverBox {
+position: absolute;
+height: 25%;
+width: 30%;
+left:50%;
+top: 30%;
+border-style: solid;
+border-width: 2px;
+}
+.OracleBox {
+position: absolute;
+height: 25%;
+width: 30%;
+left:5%;
+top: 60%;
+border-style: solid;
+border-width: 2px;
+}
+
+
+.mainBox {
+position: absolute;
+height: 25%;
+width: 30%;
+left:5%;
+top: 30%;
+border-style: solid;
+border-width: 2px;
+}
+
+.stuffBox {
+position: absolute;
+left: 20%;
+top:20%
+}
+
+.stuffTwoBox {
+position: absolute;
+left: 20%;
+top:50%
+}
+
+
+/* Status Stuff */
+
+.StatusBox{
+position: absolute;
+border-style: solid;
+border-width: 2px;
+width: 50%;
+height: 20%;
+top: 2%;
+left: 25%;
+}
+
+.Title{
+position: absolute;
+font-size:1.5em;
+left:35%;
+}
+
+.InfoBox{
+position: absolute;
+top: 30%;
+left: 10%;
+}
+
+.StatusTitle {
+position: relative;
+display: inline-block;
+font-size: large;
+padding-left:10%;
+}
+
+.StatusValue{
+position: relative;
+display:inline-block;
+left:3%; 
+}
+
 .App {
   text-align: center;
 }

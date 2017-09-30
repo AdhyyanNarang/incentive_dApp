@@ -2,33 +2,28 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {incentiveContract} from './EthereumSetup';
+import Owner from './Owner';
+import Status from './Status';
+import Oracle from './Oracle';
+import Receiver from './Receiver';
+import Donor from './Donor';
 
 class App extends Component {
 
 	constructor(props) {
 		super(props)
-		this.state = {
-			completionStatus: "",
-			bounty: "",
-		}
 	}
 
-	componentWillMount() {
-		var bountyVal = incentiveContract.checkBounty();
-		var completionVal = incentiveContract.checkStatus();
-		this.setState({
-			completionStatus: completionVal,
-			bounty: parseInt(bountyVal, 10)
-		})
-	}
 
   render() {
     return (
       <div className="App">
-        <p className="App-intro">
-		I would like to say : {this.state.bounty}
-        </p>
-      </div>
+        	<Owner />
+	    	<Status />
+	    	<Oracle />
+	    	<Receiver />
+	    	<Donor />
+	</div>
     );
   }
 }
